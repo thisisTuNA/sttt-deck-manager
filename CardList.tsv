@@ -1,0 +1,561 @@
+Dex number	Stt	Phân loại	Màu	Cost	Độ hiếm	Tên	Tộc 	Mùa
+1	1	Thần	Đỏ	1	SR	Cóc    		STTT
+2	2	Thần	Đỏ	1	SR	Cóc*		STTT
+3	3	Thần	Đỏ	1	R	Cô Tiên		STTT
+4	4	Thần	Đỏ	2	R	Táo quân tập sự		STTT
+5	5	Thần	Đỏ	2	R	Lạc Long Quân		STTT
+6	6	Thần	Đỏ	2	R	Lạc Long Quân*		STTT
+7	7	Thần	Đỏ	2	SR	Long 		STTT
+8	8	Thần	Đỏ	2	SR	Long*		STTT
+9	9	Thần	Đỏ	2	SR	Tấm		STTT
+10	10	Thần	Đỏ	2	SR	Tấm*		STTT
+11	11	Thần	Đỏ	2	R	Gióng		STTT
+12	12	Thần	Đỏ	4	UR	Xương Cuồng		STTT
+13	13	Thần	Đỏ	4	UR	Xương Cuồng*		STTT
+14	14	Thần	Xanh 	1	R	Tấm		STTT
+15	15	Thần	Xanh 	2	R	Táo quân tập sự		STTT
+16	16	Thần	Xanh 	1	R	Cô tiên		STTT
+17	17	Thần	Xanh 	2	R	Sơn tinh		STTT
+18	18	Thần	Xanh 	2	R	Sơn Tinh*		STTT
+19	19	Thần	Xanh 	1	R	Chú Cuội		STTT
+20	20	Thần	Xanh 	2	UR	Phụng		STTT
+21	21	Thần	Xanh 	2	UR	Phụng*		STTT
+22	22	Thần	Xanh 	2	SR	An Định đại sư		STTT
+23	23	Thần	Xanh 	1	R	Nam Tào		STTT
+24	24	Thần	Xanh 	1	R	Nam Tào*		STTT
+25	25	Thần	Xanh 	2	SR	Ngư Tinh		STTT
+26	26	Thần	Xanh 	2	SR	Ngư Tinh*		STTT
+27	27	Thần	Xanh 	2	SR	Xương Cuồng		STTT
+28	28	Thần	Xanh 	2	SR	Xương Cuồng*		STTT
+29	29	Thần	Tím	2	R	Anh Khoai		STTT
+30	30	Thần	Tím	1	R	Bắc Đẩu		STTT
+31	31	Thần	Tím	1	R	Bắc Đẩu*		STTT
+32	32	Thần	Tím	1	U	Cô tiên		STTT
+33	33	Thần	Tím	3	UR	Hồ Tinh		STTT
+34	34	Thần	Tím	3	UR	Hồ Tinh*		STTT
+35	35	Thần	Tím	2	SR	Huyền Lâm		STTT
+36	36	Thần	Tím	2	UR	Ly		STTT
+37	37	Thần	Tím	2	UR	Ly*		STTT
+38	38	Thần	Tím	2	R	Táo quân tập sự		STTT
+39	39	Thần	Tím	1	R	Tấm		STTT
+40	40	Thần	Tím	2	R	Thuỷ Tinh		STTT
+41	41	Thần	Tím	2	R	Thuỷ Tinh*		STTT
+42	42	Thần	Tím	2	SR	Xương Cuồng		STTT
+43	43	Thần	Tím	2	SR	Xương Cuồng*		STTT
+44	44	Thần	Vàng	2	R	Âu Cơ		STTT
+45	45	Thần	Vàng	2	R	Âu Cơ*		STTT
+46	46	Thần	Vàng	2	SR	Chị Hằng		STTT
+47	47	Thần	Vàng	2	SR	Hằng Nga*		STTT
+48	48	Thần	Vàng	1	R	Cô Tiên		STTT
+49	49	Thần	Vàng	2	SR	Ngọc Hoa		STTT
+50	50	Thần	Vàng	2	SR	Ngọc Hoa*		STTT
+51	51	Thần	Vàng	2	UR	Quy		STTT
+52	52	Thần	Vàng	2	UR	Quy*		STTT
+53	53	Thần	Vàng	2	R	Táo quân tập sự		STTT
+54	54	Thần	Vàng	1	R	Tấm		STTT
+55	55	Thần	Vàng	1	SR	Xương Cuồng		STTT
+56	56	Thần	Vàng	1	SR	Xương Cuồng*		STTT
+57	57	Lính	Đỏ	1(1)	U	Cáo kiện Trời	Kiện trời	STTT
+58	58	Lính	Đỏ	2(1)	U	Cua kiện Trời	Kiện trời	STTT
+59	59	Lính	Đỏ	4(5)	U	Gấu kiện Trời	Kiện trời	STTT
+60	60	Lính	Đỏ	3(2)	U	Hổ kiện Trời	Kiện trời	STTT
+61	61	Lính	Đỏ	0(0)	U	Ong kiện Trời	Kiện trời	STTT
+62	62	Lính	Đỏ	1(1)	U	Lính tiên phong	Lạc Việt	STTT
+63	63	Lính	Đỏ	2(1)	U	Kỵ binh xông xáo	Lạc Việt	STTT
+64	64	Lính	Đỏ	4(2)	U	Dũng tướng tiên phong	Lạc Việt	STTT
+65	65	Lính	Đỏ	3(2)	R	Lạc Tướng khôn ngoan	Lạc Việt	STTT
+66	66	Lính HT	Đỏ	3(2)	SR	Lương Khan, chiến thần Lạc Việt	Lạc Việt	STTT
+67	67	Lính	Đỏ	3(2)	C	Sát tặc ngạo nghễ	Người 	STTT
+68	68	Lính	Đỏ	4(2)	R	Xạ thủ sơn tặc	Người 	STTT
+69	69	Lính	Đỏ	3(2)	R	Lãnh đạo sơn tặc	Người 	STTT
+70	70	Lính	Đỏ	2(0)	C	Sơn tặc hung bạo	Người 	STTT
+71	71	Lính	Đỏ	3(1)	U	Học sĩ chim cu gáy	Sơn tộc	STTT
+73	72	Lính HT	Đỏ	3(2)	SR	Tai Đỏ, mũi tên của Sơn Tinh	Sơn tộc	STTT
+74	73	Lính	Đỏ	2(1)	C	Đầu bếp dã trư	Sơn tộc	STTT
+75	74	Lính	Đỏ	3(2)	R	Hùng tướng say máu	Sơn tộc	STTT
+76	75	Lính	Đỏ	4(2)	U	Tê giác phá hoại	Sơn tộc	STTT
+77	76	Lính	Đỏ	1(1)	C	Thi sĩ nhởn nhơ	Lạc điểu tộc	STTT
+78	77	Lính	Đỏ	2(2)	C	Lạc điểu tiên phong	Lạc điểu tộc	STTT
+79	78	Lính	Đỏ	1(1)	C	Võ sĩ khôn lỏi	Lạc điểu tộc	STTT
+80	79	Lính	Đỏ	2(2)	C	Võ sư đơn độc	Lạc điểu tộc	STTT
+81	80	Lính	Đỏ	3(3)	R	Thủ lĩnh Lạc điểu tộc	Lạc điểu tộc	STTT
+82	81	Lính HT	Đỏ	3(2)	SR	Tư La, tù trưởng Lạc điểu tộc	Lạc điểu tộc	STTT
+83	82	Lính HT	Đỏ	4(3)	SR	Huyết Nha, Thuỷ tướng khát máu	Thuỷ tộc	STTT
+85	83	Lính HT	Đỏ	6(4)	UR	Sùng Lang, trấn ải Long Quân	Thuỷ - Long tộc	STTT
+86	84	Lính	Đỏ	3(1)	R	Tiền vệ Long tộc	Thuỷ - Long tộc	STTT
+87	85	Lính	Đỏ	5(2)	R	Gà 6 Cựa	Thần thú	STTT
+89	86	Lính HT	Đỏ	6(4)	UR	Gà 9 Cựa, nỗi sợ hãi của núi rừng	Thần thú	STTT
+90	87	Lính	Xanh	1(0)	C	Lính sói	Sơn tộc	STTT
+91	88	Lính	Xanh	2(1)	C	Lính trâu	Sơn tộc	STTT
+92	89	Lính	Xanh	2(0)	C	Voi đá	Tự nhiên	STTT
+93	90	Lính	Xanh	4(2)	U	Tê giác binh	Sơn tộc	STTT
+94	91	Lính	Xanh	2(1)	U	Sói đàn	Sơn tộc	STTT
+95	92	Lính	Xanh	3(0)	U	Cu li Sơn tộc	Sơn tộc	STTT
+96	93	Lính	Xanh	1(0)	C	Thầy lang vọoc	Sơn tộc	STTT
+97	94	Lính	Xanh	2(1)	U	Lang băm hươu sao	Sơn tộc	STTT
+98	95	Lính	Xanh	3(1)	R	Beo hoa sát thủ	Sơn tộc	STTT
+99	96	Lính	Xanh	4(2)	R	Trâu tướng say máu	Sơn tộc	STTT
+100	97	Lính	Xanh	3(2)	R	Rùa cổ đại	Tự nhiên	STTT
+101	98	Lính	Xanh	2(1)	C	Gấu con hăng hái	Sơn tộc	STTT
+102	99	Lính	Xanh	1(0)	C	Thỏ bầy	Sơn tộc	STTT
+103	100	Lính HT	Xanh	5(3)	SR	Tay Đen, đại hùng tộc trưởng	Sơn tộc	STTT
+104	101	Lính	Xanh	3(2)	U	Đại hùng Sơn tướng	Sơn tộc	STTT
+106	102	Lính HT	Xanh	4(3)	R	Tí Nị, cánh tay phải của Sơn Tinh	Sơn tộc	STTT
+108	103	Lính HT	Xanh	3(2)	SR	Tham Lang, Sơn Tinh tiền nhiệm	Sơn tộc	STTT
+109	104	Lính	Xanh	2(1)	C	Nhím nhặt nhạnh	Sơn tộc	STTT
+110	105	Lính	Xanh	3(1)	C	Quái lợn 4 nanh	Thú	STTT
+111	106	Lính	Xanh	2(1)	U	Tiểu Tích	Tự nhiên	STTT
+113	107	Lính HT	Xanh	3(2)	SR	Lục Lục, Thần Tích cự nhân	Tự nhiên	STTT
+114	108	Lính	Xanh	3(2)	U	Nông dân hăng hái	Người 	STTT
+115	109	Lính	Xanh	2(2)	R	Cô dâu Thần Thụ	Tiên tộc	STTT
+116	110	Lính	Xanh	2(1)	C	Tiên tộc nông nhàn	Tiên tộc	STTT
+117	111	Lính	Xanh	3(1)	U	Tiên tộc khiển sói 	Tiên tộc	STTT
+118	112	Lính	Xanh	3(2)	R	Cờ binh Lạc Việt	Lạc Việt	STTT
+119	113	Lính	Xanh	2(2)	R	Thợ rèn Lạc Việt	Lạc Việt	STTT
+120	114	Lính	Xanh	2(1)	C	Khiên thủ Lạc Việt	Lạc Việt	STTT
+121	115	Lính	Xanh	3(2)	R	Lạc Hầu tận tuỵ	Lạc Việt	STTT
+122	116	Lính	Xanh	6(4)	R	Voi 6 ngà	Thần thú	STTT
+124	117	Lính HT	Xanh	6(5)	UR	Voi 9 Ngà, rung chấn núi rừng	Thần thú	STTT
+125	118	Lính	Tím	1(0)	C	Lính cá	Thuỷ tộc	STTT
+126	119	Lính	Tím	2(1)	U	Chình sát thủ	Thuỷ tộc	STTT
+127	120	Lính	Tím	1(1)	C	Binh tôm	Thuỷ tộc	STTT
+128	121	Lính	Tím	3(1)	U	Cá mập đầu búa	Thuỷ tộc	STTT
+129	122	Lính	Tím	4(2)	U	Ghẹ tướng gai góc	Thuỷ tộc	STTT
+130	123	Lính	Tím	2(1)	R	Lính lác thuỷ tộc	Thuỷ tộc	STTT
+131	124	Lính	Tím	2(1)	U	Cá mất trí	Thuỷ tộc	STTT
+132	125	Lính	Tím	2(2)	C	Chình điện	Thuỷ tộc	STTT
+133	126	Lính	Tím	2(1)	R	Cao xạ pháo ngư	Thuỷ tộc	STTT
+134	127	Lính	Tím	3(2)	R	Ếch binh	Thuỷ tộc	STTT
+135	128	Lính	Tím	2(1)	R	Lính chình giấu nghề	Thuỷ tộc	STTT
+136	129	Lính	Tím	1(0)	C	Ma sứa điện	Thuỷ tộc - Yêu Ma	STTT
+137	130	Lính	Tím	3(2)	U	Cá mập tay búa	Thuỷ tộc	STTT
+138	131	Lính	Tím	3(2)	C	Long tướng phẫn uất	Thuỷ - Long tộc	STTT
+139	132	Lính	Tím	2(0)	C	Ma da	Yêu Ma	STTT
+140	133	Lính	Tím	2(0)	C	Ma xó	Yêu Ma	STTT
+141	134	Lính	Tím	2(1)	U	Tàn tích mộc tinh	Yêu Ma	STTT
+142	135	Lính	Tím	1(0)	C	Ma rác	Yêu Ma	STTT
+143	136	Lính	Tím	2(1)	C	Ma no	Yêu Ma	STTT
+144	137	Lính	Tím	1(3)	U	Ma trơi	Yêu Ma	STTT
+145	138	Lính	Tím	2(2)	R	Ông ba bị	Yêu Ma	STTT
+146	139	Lính	Tím	2(2)	U	Cóc băng nhào mật	Yêu Ma	STTT
+148	140	Lính HT	Tím	5(3)	SR	Cự Ngạ Quỷ, cơn đói vĩnh cửu	Yêu Ma	STTT
+149	141	Lính	Tím	3(2)	C	Yêu rắn khổng lồ	Yêu Ma	STTT
+150	142	Lính	Tím	3(3)	R	Lão ngư dân	Người 	STTT
+152	143	Lính HT	Tím	2(2)	SR	Cám, đứa em tráo trở	Người 	STTT
+154	144	Lính HT	Tím	5(4)	UR	Dì ghẻ, cái ác hiện thân	Người 	STTT
+156	145	Lính HT	Tím	5(3)	R	Sùng Lộc, Tể tưởng của Thuỷ tộc	Thuỷ - Long tộc	STTT
+157	146	Lính	Tím	4(2)	U	Bạch tuộc 6 vòi	Thần thú	STTT
+159	147	Lính HT	Tím	6(4)	SR	Bạch Tuộc 9 Vòi, kinh hoàng biển sâu	Thần thú	STTT
+160	148	Lính	Vàng	1(1)	C	Kiếm sĩ Tiên tộc	Tiên tộc	STTT
+161	149	Lính	Vàng	1(0)	C	Pháp sư tập sự	Tiên tộc	STTT
+162	150	Lính	Vàng	2(2)	U	Pháp sư ưu tú	Tiên tộc	STTT
+163	151	Lính	Vàng	3(2)	R	Tiên pháp thượng sư	Tiên tộc	STTT
+164	152	Lính	Vàng	1(0)	C	Vệ sĩ Tiên tộc	Tiên tộc	STTT
+165	153	Lính	Vàng	2(2)	U	Vũ nữ Tiên tộc	Tiên tộc	STTT
+167	154	Lính HT	Vàng	4(3)	SR	Can Giả, người lưu giữ huyền thoại	Tiên tộc	STTT
+169	155	Lính HT	Vàng	3(4)	SR	Lạc Tiên, đại đệ tử của Âu Cơ	Tiên tộc	STTT
+170	156	Lính	Vàng	2(1)	C	Võ sư Tiên tộc	Tiên tộc	STTT
+171	157	Lính	Vàng	3(2)	R	Thần tiễn	Tiên tộc	STTT
+173	158	Lính HT	Vàng	5(4)	SR	Âu Cát, đại pháp sư Tiên tộc	Tiên tộc	STTT
+174	159	Lính	Vàng	3(3)	U	Pháp sư hiếu chiến	Tiên tộc	STTT
+175	160	Lính	Vàng	2(1)	C	Tư tế Lạc điểu	Lạc điểu tộc	STTT
+176	161	Lính	Vàng	1(1)	U	Vũ công Lạc điểu	Lạc điểu tộc	STTT
+177	162	Lính	Vàng	1(1)	C	Bùa sư	Lạc điểu tộc	STTT
+178	163	Lính	Vàng	2(2)	C	Sứ giả Thần Thụ	Tiên tộc	STTT
+179	164	Lính	Vàng	2(0)	C	Kết giới sư	Người 	STTT
+181	165	Lính HT	Vàng	3(2)	SR	Du Tô, Thỏ Ngọc của Chị Hằng	Thần thú	STTT
+182	166	Lính	Vàng	4(3)	R	Ngựa 6 Hồng Mao	Thần thú	STTT
+184	167	Lính HT	Vàng	5(3)	UR	Ngựa 9 Hồng Mao, kỳ quan núi rừng	Thần thú	STTT
+185	168	Lính	Trắng	0(0)	C	Cá nóc độc	Thuỷ tộc	STTT
+186	169	Lính	Trắng	2(0)	U	Cung thủ Lạc Việt	Lạc Việt	STTT
+187	170	Lính	Trắng	2(0)	C	Bò điên	Thú	STTT
+188	171	Lính	Trắng	2(1)	U	Đô Đô hiếu kỳ	Sơn tộc	STTT
+189	172	Lính	Trắng	3(0)	U	Pháp sư Lạc điểu	Lạc điểu tộc	STTT
+190	173	Lính	Trắng	1(0)	C	Sơn tặc liều lĩnh	Người 	STTT
+191	174	Lính	Trắng	2(2)	U	Sơn tặc quyến rũ	Người 	STTT
+192	175	Lính	Trắng	2(1)	U	Thầy phong thuỷ	Người 	STTT
+193	176	Lính	Trắng	0(2)	C	Trừ tà sư	Người 	STTT
+194	177	Lính	Trắng	3(2)	U	Thầy bói	Người 	STTT
+195	178	Lính	Trắng	2(2)	C	Phú ông	Người 	STTT
+196	179	Lính	Trắng	3(2)	R	Người giảng hoà	Người 	STTT
+197	180	Lính	Trắng	4(2)	C	Ma hổ trành	Yêu Ma	STTT
+198	181	Lính	Trắng	4(2)	SR	Lãng nữ Mineko	Người 	STTT
+199	182	Lính HT	Trắng	6(2)	R	Dạ Xoa điên cuồng	Yêu Ma	STTT
+201	183	Lính HT	Trắng	4(2)	SR	Na Đa, yêu hồ ma quái	Yêu Ma	STTT
+202	184	Phép	Đỏ	2(1)	R	Chiến trường khốc liệt		STTT
+203	185	Phép	Đỏ	2(2)	U	Trao kiếm		STTT
+204	186	Phép	Đỏ	3(2)	R	Thiên Vương phù trợ		STTT
+205	187	Phép	Đỏ	1(2)	U	Chiến nỏ		STTT
+206	188	Phép	Đỏ	3(2)	U	Công thành bất ngờ		STTT
+208	189	Phép	Đỏ	3(3)	R	Long Quân giáng lâm		STTT
+209	190	Phép	Đỏ	3(1)	U	Mưa tên		STTT
+210	191	Phép	Đỏ	1(2)	C	Tĩnh dưỡng		STTT
+211	192	Phép	Đỏ	3(2)	U	Mệnh lệnh mới		STTT
+212	193	Phép	Đỏ	1(2)	C	Ý chí Long Quân		STTT
+213	194	Phép	Đỏ	3(2)	U	Xung phong!		STTT
+214	195	Phép	Đỏ	2(2)	C	Liều mình cứu giá		STTT
+215	196	Phép	Xanh	2(1)	C	Bánh dày Lạc Điểu tộc		STTT
+216	197	Phép	Xanh	1(1)	C	Bẫy dây leo		STTT
+217	198	Phép	Xanh	2(0)	C	Kề vai sát cánh		STTT
+218	199	Phép	Xanh	1(2)	U	Sung mãn		STTT
+219	200	Phép	Xanh	4(3)	SR	Thú tính trỗi dậy		STTT
+221	201	Phép	Xanh	4(2)	SR	Bảo vệ Thần Thụ		STTT
+222	202	Phép	Xanh	2(1)	C	Mảnh thần tích		STTT
+223	203	Phép	Xanh	1(2)	R	Nhớ lại bản năng		STTT
+224	204	Phép	Xanh	1(1)	C	Lá đa thần kỳ		STTT
+225	205	Phép	Xanh	2(1)	U	Đời lên hương		STTT
+226	206	Phép	Xanh	2(1)	C	Cơm vàng cơm bạc		STTT
+227	207	Phép	Xanh	2(1)	U	Cả làng nấu cơm		STTT
+228	208	Phép	Xanh	2(2)	U	Mạnh như tê giác		STTT
+229	209	Phép	Xanh	3(2)	U	Dời non lấp bể		STTT
+230	210	Phép	Xanh	2(2)	C	Rễ cây mộc tinh		STTT
+231	211	Phép	Tím	0(1)	C	Mượn sinh lực		STTT
+232	212	Phép	Tím	1(1)	C	Nguyền rủa		STTT
+233	213	Phép	Tím	1(0)	C	Thanh lọc linh hồn		STTT
+234	214	Phép	Tím	1(2)	U	Tốc biến		STTT
+235	215	Phép	Tím	3(2)	R	Đập bay		STTT
+236	216	Phép	Tím	2(0)	U	Đe doạ		STTT
+237	217	Phép	Tím	3(2)	U	Bẫy thuỷ quái		STTT
+238	218	Phép	Tím	3(3)	C	Thuỷ thức: Ngược dòng		STTT
+239	219	Phép	Tím	2(2)	R	Ném bay		STTT
+240	220	Phép	Tím	2(2)	U	Theo đuổi định mệnh		STTT
+241	221	Phép	Tím	5(3)	SR	Yêu ma hoành hành		STTT
+242	222	Phép	Tím	2(2)	SR	Khắc xuất khắc xuất 		STTT
+244	223	Phép	Tím	6(3)	UR	Sức mạnh của Thuỷ Long Châu		STTT
+245	224	Phép	Tím	2(2)	R	Đánh lén		STTT
+246	225	Phép	Tím	1(0)	C	Chăm chỉ tìm tre		STTT
+247	226	Phép	Tím	2(2)	U	Ngon ngỏn ngòn ngon		STTT
+248	227	Phép	Tím	3(3)	C	Hô mưa gọi gió		STTT
+249	228	Phép	Tím	2(3)	U	Vào sổ tử		STTT
+250	229	Phép	Vàng	2(0)	C	Tiên pháp trừng trị		STTT
+251	230	Phép	Vàng	2(2)	U	Liên hoàn sấm sét		STTT
+252	231	Phép	Vàng	1(1)	C	Thanh trừng		STTT
+253	232	Phép	Vàng	1(1)	U	Thiên Lôi gọi tên		STTT
+254	233	Phép	Vàng	3(3)	SR	Tiên pháp bị cấm		STTT
+256	234	Phép	Vàng	3(3)	R	Xương Cuồng náo loạn		STTT
+257	235	Phép	Vàng	3(2)	C	Kim cương bất hoại		STTT
+258	236	Phép	Vàng	2(2)	R	Hoá gà		STTT
+260	237	Phép	Vàng	2(2)	SR	Lễ rước dâu Thần Thụ		STTT
+261	238	Phép	Vàng	3(2)	R	Ngày định mệnh		STTT
+263	239	Phép	Vàng	8(5)	UR	Rồng Tiên hợp sức		STTT
+264	240	Phép	Vàng	1(0)	C	Tiên pháp toàn vệ		STTT
+265	241	Phép	Vàng	1(1)	C	Vỡ kết giới		STTT
+266	242	Phép	Vàng	0(3)	SR	Trời phạt		STTT
+267	243	Phép	Vàng	2(1)	C	Tổ Mẫu phù hộ		STTT
+268	244	Phép	Vàng	2(1)	U	Nguyện cầu của Tấm		STTT
+269	245	Lính HT	Trắng 	3(3)	SCR	Éhk, Chim thần	Thần thú	STTT
+270	246	Thần 	Tím	2	SCR	Thuỷ Tinh, Thách Long Quân		STTT
+271	247	Thần	Xanh	2	SCR	Sơn Tinh, Tân Vương Sơn Tộc		STTT
+272	248	Phép	Trắng	2(3)	SCR	Sức mạnh của Thổ Linh Châu		STTT
+273	EX01	Thần	Đỏ	0	EX	Thánh Gióng		STTT
+274	EX02	Lính	Đỏ	4(2)	EX	Giáp sắt	Trang bị	STTT
+275	EX03	Lính	Đỏ	2(1)	EX	Mũ sắt	Trang bị	STTT
+276	EX04	Lính	Đỏ	5(3)	EX	Ngựa sắt	Trang bị	STTT
+277	EX05	Lính	Đỏ	3(2)	EX	Roi sắt	Trang bị	STTT
+278	EX06	Lính	Đỏ	2(2)	EX	Sứ giả Lạc Việt	Lạc Việt	STTT
+279	EX07	Lính HT	Đỏ	3(2)	EX	Trực Đản, Thần Rèn Lạc Việt	Lạc Việt	STTT
+280	EX08	Lính	Xanh	2(1)	EX	Tí	Con giáp	STTT
+281	EX09	Lính	Đỏ	4(2)	EX	Sửu	Con giáp	STTT
+282	EX10	Lính	Đỏ	4(2)	EX	Dần	Con giáp	STTT
+283	EX11	Lính	Tím	3(3)	EX	Mão	Con giáp	STTT
+284	EX12	Lính	Xanh	3(2)	EX	Thố	Con giáp	STTT
+285	EX13	Lính	Xanh	2(2)	EX	Thìn	Con giáp	STTT
+286	EX14	Lính	Tím	2(1)	EX	Tỵ	Con giáp	STTT
+287	EX15	Lính	Vàng	3(2)	EX	Ngọ	Con giáp	STTT
+288	EX16	Lính	Tím	2(0)	EX	Mùi	Con giáp	STTT
+289	EX17	Lính	Vàng	2(2)	EX	Thân	Con giáp	STTT
+290	EX18	Lính	Đỏ	4(2)	EX	Dậu	Con giáp	STTT
+291	EX19	Thần	Xanh 	1	EX	Tuất		STTT
+292	EX20	Lính	Vàng	3(2)	EX	Hợi	Con giáp	STTT
+293	EX21	Thần	Đỏ	0	EX	Thánh Gióng*		STTT
+294	1	Thần	Đỏ	2	SR	Lạc Long Quân*		DTGL
+295	2	Thần	Đỏ	2	UR	Tai Đỏ		DTGL
+296	3	Thần	Đỏ	2	UR	Tai Đỏ*		DTGL
+297	4	Thần	Đỏ	2	UR	Anh Hổ		DTGL
+298	5	Thần	Đỏ	2	UR	Anh Hổ*		DTGL
+299	6	Thần	Đỏ	1	SR	Mũ Trùm		DTGL
+300	7	Thần	Đỏ	1	UR	Nam Tào		DTGL
+301	8	Thần	Đỏ	1	UR	Nam Tào*		DTGL
+302	9	Thần	Đỏ	1	SR	Tiên Hạ		DTGL
+303	10	Thần	Xanh	2	SR	Sơn Tinh*		DTGL
+304	11	Thần	Xanh	2	SR	Tí Nị		DTGL
+305	12	Thần	Xanh	2	UR	Âu Tinh		DTGL
+306	13	Thần	Xanh	2	UR	Âu Tinh*		DTGL
+307	14	Thần	Xanh	1	SR	Mũ Trùm		DTGL
+308	15	Thần	Xanh	1	SR	La Lan, Vợ Cuội		DTGL
+309	16	Thần	Xanh	1	UR	Anh Khoai		DTGL
+310	17	Thần	Xanh	1	UR	Anh Khoai*		DTGL
+311	18	Thần	Xanh	1	SR	Tiên Xuân		DTGL
+312	19	Thần	Tím	2	SR	Thuỷ Tinh*		DTGL
+313	20	Thần	Tím	1	SR	Sùng Lộc		DTGL
+314	21	Thần	Tím	1	SR	Sùng Lộc*		DTGL
+315	22	Thần	Tím	2	SR	Chị Hằng		DTGL
+316	23	Thần	Tím	2	UR	Kaguya*		DTGL
+317	24	Thần	Tím	1	UR	Mũ Trùm		DTGL
+318	25	Thần	Tím	1	UR	Mũ Trùm*		DTGL
+319	26	Thần	Tím	2	SR	Âu Kình		DTGL
+320	27	Thần	Tím	2	SR	Cây Ma		DTGL
+321	28	Thần	Tím	1	SR	Tiên Đông		DTGL
+322	29	Thần	Vàng	2	SR	Âu Cơ*		DTGL
+323	30	Thần	Vàng	2	SR	Lạc Điểu Trưởng Lão		DTGL
+324	31	Thần	Vàng	2	UR	Bắc Đẩu		DTGL
+325	32	Thần	Vàng	2	UR	Bắc Đẩu*		DTGL
+326	33	Thần	Vàng	1	SR	Mũ Trùm		DTGL
+327	34	Thần	Vàng	1	SR	Tiên Thu		DTGL
+328	35	Đại Thần	Đỏ	2	UR	Lạc Long Quân*		DTGL
+329	36	Đại Thần	Xanh	2	UR	Sơn Tinh*		DTGL
+330	37	Đại Thần	Tím	2	UR	Thuỷ Tinh*		DTGL
+331	38	Đại Thần	Vàng	2	UR	Âu Cơ*		DTGL
+332	39	Thần Điện	Đỏ	2	SR	Văn Lang		DTGL
+333	40	Thần Điện	Đỏ	1	SR	Đấu Trường Kén Rể		DTGL
+334	41	Thần Điện	Đỏ	2	UR	Thuỷ Long Động		DTGL
+335	42	Thần Điện	Xanh	1	UR	Lãnh Địa Sơn Tộc		DTGL
+336	43	Thần Điện	Xanh	1	SR	Đại Chiến Âu Kình		DTGL
+337	44	Thần Điện	Xanh	2	SR	Sơn Tộc Hành Quân		DTGL
+338	45	Thần Điện	Tím	1	UR	Thuỷ Tộc Hành Quân		DTGL
+339	46	Thần Điện	Tím	2	UR	Thuỷ Cung		DTGL
+340	47	Thần Điện	Tím	1	SR	Diện Kiến Thánh Ma		DTGL
+341	48	Thần Điện	Vàng	2	UR	Thánh Nữ Vi Hành		DTGL
+342	49	Thần Điện	Vàng	1	SR	Tiên Nhân Giáng Lâm		DTGL
+343	50	Thần Điện	Vàng	1	SR	Bạch Hạc Thần Thụ		DTGL
+344	51	Lính	Đỏ	1(1)	C	Khí công sư tập sự	Lạc điểu tộc	DTGL
+345	52	Lính	Đỏ	1(1)	U	Cồng binh Lạc Việt	Lạc Việt	DTGL
+346	53	Lính	Đỏ	2(1)	C	Đại thi sĩ	Lạc điểu tộc	DTGL
+347	54	Lính	Đỏ	2(1)	C	Chó rừng tò mò	Sơn tộc	DTGL
+348	55	Lính	Đỏ	2(1)	U	Cheo cheo nhiệt huyết	Mặt đen	DTGL
+349	56	Lính	Đỏ	2(1)	U	Kẻ cuồng Long tộc	Lạc Việt	DTGL
+350	57	Lính	Đỏ	2(2)	U	Võ sĩ nhanh nhạy	Lạc điểu tộc	DTGL
+351	58	Lính	Đỏ	2(2)	C	Sư phụ nghiêm khắc	Lạc điểu tộc	DTGL
+352	59	Lính	Đỏ	2(2)	R	Mèo nhỏ dũng cảm	Mặt đen	DTGL
+353	60	Lính	Đỏ	2(2)	R	Nhím nhỏ nổi điên	Mặt đen	DTGL
+354	61	Lính HT	Đỏ	2(2)	R	Tai Đốm, đệ tử của Tai Đỏ	Mặt đen	DTGL
+355	62	Lính 	Đỏ	2(2)	C	Tình báo liều lĩnh	Lạc Việt	DTGL
+356	63	Lính 	Đỏ	2(2)	U	Giáo binh uyển chuyển	Lạc Việt	DTGL
+357	64	Lính 	Đỏ	2(3)	C	Đặc công tự tin	Lạc Việt	DTGL
+358	65	Lính 	Đỏ	2(3)	U	Nữ trinh thám Lạc Việt	Lạc Việt	DTGL
+359	66	Lính 	Đỏ	3(2)	R	Điểm huyệt khí sư	Lạc điểu tộc	DTGL
+360	67	Lính 	Đỏ	3(2)	U	Do thám liều lĩnh	Sơn tộc	DTGL
+361	68	Lính 	Đỏ	3(2)	C	Vọoc chờ thời	Sơn tộc	DTGL
+362	69	Lính 	Đỏ	3(2)	R	Trâu gầy điên tiết	Mặt đen	DTGL
+363	70	Lính 	Đỏ	3(2)	U	Long tộc tân binh	Thuỷ - Long tộc	DTGL
+364	71	Lính 	Đỏ	3(2)	U	Long tộc tướng lĩnh	Thuỷ - Long tộc	DTGL
+365	72	Lính 	Đỏ	4(2)	U	Sao la giấu nghề	Mặt đen	DTGL
+366	73	Lính 	Đỏ	4(2)	R	Trâu tướng nóng vội	Mặt đen	DTGL
+367	74	Lính HT	Đỏ	4(3)	SR	Phu Di, sư phụ của Tai Đỏ	Mặt đen	DTGL
+368	75	Lính 	Đỏ	4(3)	R	Long tộc hiếu thắng	Thuỷ - Long tộc	DTGL
+369	76	Lính HT	Đỏ	5(4)	UR	Sùng Cang, Long Quân dũng mãnh*	Thuỷ - Long tộc	DTGL
+370	77	Lính	Đỏ	6(4)	SR	Lôi đông Long tướng	Thuỷ - Long tộc	DTGL
+371	78	Lính	Xanh	1(2)	C	Mộc tiên vui vẻ	Tiên tộc	DTGL
+372	79	Lính	Xanh	2(2)	C	Mộc tiên ân cần	Tiên tộc	DTGL
+373	80	Lính	Xanh	2(2)	U	Tiên thú thiện chiến	Tiên tộc	DTGL
+374	81	Lính	Xanh	2(1)	C	Lão tiên và khỉ con	Tiên tộc	DTGL
+375	82	Lính	Xanh	2(2)	C	Mộc tiên mẫn cán	Tiên tộc	DTGL
+376	83	Lính	Xanh	2(2)	U	Sơ cứu nhiệt tình	Lạc Việt	DTGL
+377	84	Lính	Xanh	2(2)	U	Thỏ con nhân hậu	Mặt đen	DTGL
+378	85	Lính	Xanh	2(2)	C	Lang tộc thám thính	Sơn tộc	DTGL
+379	86	Lính HT	Xanh	2(2)	R	Tham Lang, kẻ bị lật đổ	Sơn tộc	DTGL
+380	87	Lính	Xanh	2(2)	U	Lang tộc dẫn đầu	Sơn tộc	DTGL
+381	88	Lính	Xanh	2(1)	U	Thầy lang lành nghề	Mặt đen	DTGL
+382	89	Lính	Xanh	2(2)	C	Sơ cứu xông xáo	Mặt đen	DTGL
+383	90	Lính	Xanh	2(1)	R	Lang băm yêu nghề	Mặt đen	DTGL
+384	91	Lính	Xanh	3(2)	C	Mộc tiên khiển ưng	Tiên tộc	DTGL
+385	92	Lính	Xanh	3(2)	R	Mộc tiên cuồng nộ	Tiên tộc	DTGL
+386	93	Lính	Xanh	3(2)	U	Mộc tiên biến hình	Tiên tộc	DTGL
+387	94	Lính	Xanh	3(2)	R	Mộc tiên khiển gấu	Tiên tộc	DTGL
+388	95	Lính	Xanh	3(2)	C	Lính thổi tù và	Lạc Việt	DTGL
+389	96	Lính	Xanh	3(2)	R	Lính khiên vạm vỡ	Lạc Việt	DTGL
+390	97	Lính	Xanh	3(1)	C	Lang tộc thầy thuốc 	Sơn tộc	DTGL
+391	98	Lính	Xanh	3(2)	R	Cuồng nữ Lang tộc	Sơn tộc	DTGL
+392	99	Lính	Xanh	3(2)	U	Hổ binh hiếu chiến	Mặt đen	DTGL
+393	100	Lính	Xanh	3(2)	U	Song đao Sao la	Mặt đen	DTGL
+394	101	Lính	Xanh	3(2)	C	Tê tê nhẫn nhịn	Mặt đen	DTGL
+395	102	Lính	Xanh	3(2)	U	Nhím nhỏ cứng đầu	Mặt đen	DTGL
+396	103	Lính	Xanh	4(3)	R	Mộc tiên lang bạt	Tiên tộc	DTGL
+397	104	Lính	Xanh	4(3)	R	Lang tộc viện binh	Sơn tộc	DTGL
+398	105	Lính HT	Xanh	4(3)	UR	Kim Sư, lãng khách	Sơn tộc - Mặt đen	DTGL
+399	106	Lính HT	Xanh	4(2)	R	Hắc Hùng, kẻ thách thức	Mặt đen	DTGL
+400	107	Lính HT	Xanh	5(3)	SR	Cự La, thổ sư Mộc tiên	Tiên tộc	DTGL
+401	108	Lính HT	Xanh	5(4)	SR	Lạc Đa, lãnh đạo viện binh	Lạc Việt	DTGL
+402	109	Lính	Xanh	5(3)	R	Heo rừng phẫn uất	Mặt đen	DTGL
+403	110	Lính HT	Xanh	8(3)	UR	Lang Mẫu, kẻ phục thù Lang tộc*	Sơn tộc	DTGL
+404	111	Lính	Tím	2(1)	C	Nguyệt linh	Nguyệt thú	DTGL
+405	112	Lính	Tím	2(1)	R	Thuận Thiên Cẩu	Nguyệt thú	DTGL
+406	113	Lính	Tím	2(2)	U	Kẻ thuần hoá Thần Trùng	Tiên tộc - Yêu Ma	DTGL
+407	114	Lính	Tím	2(2)	R	Tiên tộc hoá ma	Tiên tộc - Yêu Ma	DTGL
+408	115	Lính	Tím	2(2)	C	Thần trùng	Yêu Ma	DTGL
+409	116	Lính	Tím	2(2)	C	Ma lượm	Yêu Ma	DTGL
+410	117	Lính HT	Tím	2(2)	SR	Âu Kình, Thánh Nữ liều lĩnh*	Tiên tộc - Yêu Ma	DTGL
+411	118	Lính	Tím	2(1)	C	Cẩu quỷ	Yêu Ma	DTGL
+412	119	Lính	Tím	2(2)	U	Ma Thần vòng	Yêu Ma	DTGL
+413	120	Lính	Tím	2(1)	C	Thiên Linh Cái	Yêu Ma	DTGL
+414	121	Lính	Tím	2(2)	C	Hâm mộ Long tộc	Thuỷ tộc	DTGL
+415	122	Lính	Tím	2(1)	U	Pháp sư Thuỷ Nương	Thuỷ tộc	DTGL
+416	123	Lính	Tím	2(2)	U	Tiên cá truyền tin	Thuỷ tộc	DTGL
+417	124	Lính	Tím	2(2)	C	Trinh sát Thuỷ tộc	Thuỷ tộc	DTGL
+418	125	Lính	Tím	2(1)	U	Ba ba tinh mắt	Thuỷ tộc	DTGL
+419	126	Lính	Tím	2(2)	R	Rồng con báo thù	Thuỷ - Long tộc	DTGL
+420	127	Lính	Tím	3(2)	U	Nguyệt thú cửa Nam	Nguyệt thú	DTGL
+421	128	Lính	Tím	3(2)	U	Nguyệt thú vũ công	Nguyệt thú	DTGL
+422	129	Lính HT	Tím	3(3)	R	Ma vú dài	Tiên tộc - Yêu Ma	DTGL
+423	130	Lính HT	Tím	3(3)	SR	Tối Hù, kẻ xoá dấu chân*	Yêu Ma	DTGL
+424	131	Lính	Tím	3(2)	U	Quỷ nhập tràng	Yêu Ma	DTGL
+425	132	Lính	Tím	3(3)	R	Sấu tướng tha hoá	Thuỷ tộc - Yêu Ma	DTGL
+426	133	Lính HT	Tím	4(3)	UR	Âu Kình, Thánh Nữ tha hoá*	Yêu Ma	DTGL
+427	134	Lính HT	Tím	4(3)	SR	Li Ly, Thuỷ nương quyến rũ	Thuỷ tộc	DTGL
+428	135	Lính HT	Tím	4(4)	SR	Li Ly, Thuỷ nương quyến rũ*	Thuỷ tộc	DTGL
+429	136	Lính	Tím	4(2)	SR	Long tộc bão thương	Thuỷ - Long tộc	DTGL
+430	137	Lính	Tím	5(2)	R	Long nữ quyến rũ	Thuỷ - Long tộc	DTGL
+431	138	Lính	Tím	5(2)	SR	Sát thủ ẩn mình	Thuỷ - Long tộc	DTGL
+432	139	Lính HT	Tím	6(3)	UR	Linh Lang, Long nữ trinh sát	Thuỷ - Long tộc	DTGL
+433	140	Lính	Vàng	1(1)	C	Nguyệt thú dâng bánh	Nguyệt thú	DTGL
+434	141	Lính	Vàng	1(1)	C	Thượng pháp trừ ma	Tiên tộc	DTGL
+435	142	Lính	Vàng	2(2)	R	Vệ sư thiện chiến	Lạc điểu tộc	DTGL
+436	143	Lính	Vàng	2(1)	C	Thượng Pháp tập sự	Tiên tộc	DTGL
+437	144	Lính	Vàng	2(1)	U	Thượng pháp bốc đồng	Tiên tộc	DTGL
+438	145	Lính HT	Vàng	2(2)	SR	Âu Kình, Thánh Nữ thần đồng	Tiên tộc	DTGL
+439	146	Lính 	Vàng	3(2)	U	Thuận Thiên Trâu	Nguyệt thú	DTGL
+440	147	Lính 	Vàng	3(2)	R	Pháp sư khoe mẽ	Lạc điểu tộc	DTGL
+441	148	Lính 	Vàng	3(2)	U	Thượng sư tiên đoán	Lạc điểu tộc	DTGL
+442	149	Lính 	Vàng	3(2)	R	Khí công Pháp sư	Lạc điểu tộc	DTGL
+443	150	Lính 	Vàng	3(2)	U	Thuận Thiên Hổ	Nguyệt thú	DTGL
+444	151	Lính HT	Vàng	4(2)	UR	Li Ta, Thượng pháp bất diệt*	Tiên tộc	DTGL
+445	152	Lính	Trắng	2(2)	C	Già làng Lạc điểu tộc	Lạc điểu tộc	DTGL
+446	153	Lính	Trắng	2(1)	C	Chó săn	Thú	DTGL
+447	154	Lính HT	Trắng	2(3)	R	Áo choàng của Mũ Trùm	Trang bị	DTGL
+448	155	Lính	Trắng	2(2)	C	Thượng Pháp tư tế	Lạc điểu tộc	DTGL
+449	156	Lính	Trắng	3(2)	C	Quạ của Mũ Trùm	Yêu Ma	DTGL
+450	157	Lính	Trắng	3(2)	U	Thiếu nữ du xuân	Người	DTGL
+451	158	Lính HT	Trắng	3(3)	R	Chó của Cuội	Thú	DTGL
+452	159	Lính	Trắng	4(3)	C	Tiếp viện thần tốc	Lạc Việt	DTGL
+453	160	Lính	Trắng	6(4)	U	Già làng tiên tộc	Tiên tộc	DTGL
+454	161	Phép	Đỏ	1(2)	C	Báo động Long tộc		DTGL
+455	162	Phép	Đỏ	2(3)	U	Bắt cóc		DTGL
+456	163	Phép	Đỏ	2(2)	U	Chiến trường không khoan nhượng		DTGL
+457	164	Phép	Đỏ	2(2)	U	Lộ chiến lược		DTGL
+458	165	Phép	Đỏ	3(2)	C	Mưa tên chính xác		DTGL
+459	166	Phép	Đỏ	3(2)	C	Sập bẫy		DTGL
+460	167	Phép	Đỏ	3(2)	U	Long Quân triệu gọi		DTGL
+461	168	Phép	Đỏ	3(2)	R	Định mệnh gọi tên		DTGL
+462	169	Phép HT	Đỏ	3(3)	R	Phá hoại thông tin		DTGL
+463	170	Phép	Đỏ	3(3)	R	Đánh lạc hướng		DTGL
+464	171	Phép	Xanh	3(3)	R	Tiếng gọi của Sơn Thánh		DTGL
+465	172	Phép	Xanh	1(2)	C	Triệu hồi tiên thú		DTGL
+466	173	Phép HT	Xanh	1(2)	R	Bất lão bất tử		DTGL
+467	174	Phép	Xanh	1(2)	C	Dây leo ma quái		DTGL
+468	175	Phép	Xanh	2(2)	C	Tiên Xuân ban phước		DTGL
+469	176	Phép	Xanh	2(2)	C	Hoá heo		DTGL
+470	177	Phép	Xanh	2(2)	U	Nuốt chửng		DTGL
+471	178	Phép	Xanh	3(2)	C	Tiên Cô chúc phúc		DTGL
+472	179	Phép HT	Xanh	3(3)	SR	Tiên pháp biến hình		DTGL
+473	180	Phép 	Xanh	3(2)	U	Hết sức bình sinh		DTGL
+474	181	Phép HT	Xanh	3(3)	UR	Hy sinh của Âu Tinh*		DTGL
+475	182	Phép	Xanh	3(3)	R	Viện binh Sơn tộc		DTGL
+476	183	Phép	Xanh	4(4)	U	Con thú bên trong		DTGL
+477	184	Phép HT	Xanh	4(3)	SR	Xây thành đấp luỹ		DTGL
+478	185	Phép	Tím	1(1)	C	Tạo ma ảnh		DTGL
+479	186	Phép	Tím	1(1)	C	Ký ức tăm tối		DTGL
+480	187	Phép	Tím	1(1)	C	Viễn chinh liều lĩnh		DTGL
+481	188	Phép	Tím	2(2)	C	Hy sinh cần thiết		DTGL
+482	189	Phép	Tím	2(2)	C	Phân hồn xẻ phách		DTGL
+483	190	Phép	Tím	2(3)	U	Liều mình phá địch		DTGL
+484	191	Phép	Tím	2(2)	R	Duyệt binh		DTGL
+485	192	Phép	Tím	2(2)	U	Thách Long Quân kêu gọi		DTGL
+486	193	Phép	Tím	3(2)	U	Thuỷ quái tấn công		DTGL
+487	194	Phép	Tím	2(2)	R	Tất cả vì Thuỷ tộc		DTGL
+488	195	Phép 	Tím	3(3)	R	Hiến tế Thánh Ma		DTGL
+489	196	Phép 	Tím	3(3)	U	Hút cạn linh khí		DTGL
+490	197	Phép 	Tím	3(3)	R	Đại khai sát giới		DTGL
+491	198	Phép 	Tím	3(3)	R	Tận diệt		DTGL
+492	199	Phép 	Tím	3(3)	R	Trinh sát cảm tử		DTGL
+493	200	Phép HT	Tím	6(4)	UR	Kẽo cà kẽo kẹt*		DTGL
+494	201	Phép	Vàng	1(1)	C	Thanh lọc thời vận		DTGL
+495	202	Phép	Vàng	2(2)	C	Kết nối sinh lực		DTGL
+496	203	Phép	Vàng	2(2)	C	Điểm huyệt 		DTGL
+497	204	Phép HT	Vàng	3(3)	UR	Lễ hội Cung Trăng*		DTGL
+498	205	Phép 	Vàng	3(2)	U	Thượng pháp liên hoàn		DTGL
+499	206	Phép HT	Vàng	3(3)	R	Trừ yêu đại pháp bị cấm		DTGL
+500	207	Phép	Vàng	3(2)	U	Ánh trăng lan toả		DTGL
+501	208	Phép	Vàng	3(2)	C	Xem xét vận hạn		DTGL
+502	209	Phép	Vàng	3(2)	C	Chị Hằng ban phước		DTGL
+503	210	Phép	Vàng	2(2)	R	Rìu vàng rìu bạc		DTGL
+504	211	Phép	Vàng	3(3)	R	Tiên pháp xuyên thấu		DTGL
+505	212	Phép	Vàng	3(2)	C	Thượng pháp bảo vệ		DTGL
+506	213	Phép	Vàng	3(3)	R	Phát tiên khí		DTGL
+507	214	Phép	Vàng	4(2)	U	Đồng lòng chiến đấu		DTGL
+508	215	Phép	Vàng	4(3)	C	Lạc điểu trận		DTGL
+509	216	Phép	Vàng	4(3)	U	Bùa pháp choáng váng		DTGL
+510	217	Phép	Vàng	4(2)	SR	Thiên Lôi giật mình		DTGL
+511	218	Phép	Vàng	4(3)	U	Tiên pháp bùng nổ		DTGL
+512	219	Phép	Vàng	4(2)	C	Tiên pháp tích tụ		DTGL
+513	220	Phép	Vàng	6(4)	SR	Ban phước của Mẹ Tiên		DTGL
+514	221	Phép HT	Vàng	8(4)	UR	Tiêu tán linh hồn		DTGL
+515	222	Phép	Trắng	2(1)	C	Hố chông		DTGL
+516	223	Phép	Trắng	2(3)	R	Phép thuật thanh tẩy		DTGL
+517	224	Phép	Trắng	3(1)	C	Sấm sét		DTGL
+518	225	Phép	Trắng	3(3)	C	Nguyệt linh nghịch ngợm		DTGL
+519	226	Phép	Trắng	3(3)	U	Đứng im do thám		DTGL
+520	227	Phép	Trắng	3(3)	U	Ánh trăng chói loà		DTGL
+521	228	Phép HT	Trắng	6(4)	R	Tiếng đàn du dương*		DTGL
+522	229	Thần	Tím	2	SCR	Hằng Nga*		DTGL
+523	230	Thần	Vàng	1	SCR	Ngọc Hoa*		DTGL
+524	231	Thần	Vàng	2	SCR	Lữ Khách Thời Không*		DTGL
+525	EX2 01	Thần	Đỏ	2	5S	Lạc Long Quân*		DTGL
+526	EX2 02	Thần	Đỏ	1	4S	Tiên Hạ		DTGL
+527	EX2 03	Thần	Xanh	2	5S	Sơn Tinh*		DTGL
+528	EX2 04	Thần	Xanh	1	4S	Tiên Xuân		DTGL
+529	EX2 05	Thần	Tím	2	5S	Thuỷ Tinh*		DTGL
+530	EX2 06	Thần	Tím	1	4S	Tiên Đông		DTGL
+531	EX2 07	Thần	Vàng	2	5S	Âu Cơ*		DTGL
+532	EX2 08	Thần	Vàng	2	4S	Tiên Thu		DTGL
+533	EX2 09	Thần	Xanh 	1	5S	Tuất		DTGL
+534	EX2 10	Đại Thần	Đỏ	0	5S	Thánh Gióng*		DTGL
+535	EX2 11	Đại Thần	Đỏ	2	5S	Lạc Long Quân*		DTGL
+536	EX2 12	Đại Thần	Xanh	2	Cỡ lớn	Sơn Tinh*		DTGL
+537	EX2 13	Đại Thần	Xanh	2	5S	Sơn Tinh*		DTGL
+538	EX2 14	Đại Thần	Tím	2	Cỡ lớn	Thuỷ Tinh*		DTGL
+539	EX2 15	Đại Thần	Tím	2	5S	Thuỷ Tinh*		DTGL
+540	EX2 16	Đại Thần	Vàng	2	5S	Âu Cơ*		DTGL
+541	EX2 17	Thần Điện	Đỏ	1	5S	Làng Của Gióng*		DTGL
+542	EX2 18	Tinh nhuệ	Đỏ	3(2)	2S	Long tộc tướng lĩnh	Thuỷ - Long tộc	DTGL
+543	EX2 19	Tinh nhuệ	Đỏ	2(2)	3S	Sứ giả Lạc Việt	Lạc Việt	DTGL
+544	EX2 20	Tinh nhuệ	Xanh	2(2)	2S	Lang băm hươu sao	Sơn tộc	DTGL
+545	EX2 21	Tinh nhuệ	Xanh	5(3)	3S	Đầu bếp phẫn uất	Mặt đen	DTGL
+546	EX2 22	Tinh nhuệ	Tím	2(2)	2S	Ma Thần vòng	Yêu Ma	DTGL
+547	EX2 23	Tinh nhuệ	Tím	4(2)	4S	Long tộc bão thương	Thuỷ - Long tộc	DTGL
+548	EX2 24	Tinh nhuệ	Vàng	3(2)	3S	Thượng sư tiên đoán	Lạc điểu tộc	DTGL
+549	EX2 25	Tinh nhuệ	Vàng	2(2)	3S	Thượng Pháp tập sự	Tiên tộc	DTGL
+550	EX2 26	Tinh nhuệ	Trắng	2(1)	2S	Chó săn	Thú	DTGL
+551	EX2 27	Lính	Đỏ/Vàng	3(1/1)	2S	Thượng pháp nhanh nhảu	Lạc điểu tộc	DTGL
+552	EX2 28	Lính	Tím/Vàng	2(1/1)	2S	Nguyệt thú nhạc sĩ	Nguyệt thú	DTGL
+553	EX2 29	Lính	Tím/Vàng	3(1/1)	2S	Nguyệt thú luống cuống	Nguyệt thú	DTGL
+554	EX2 30	Lính	Tím/Vàng	3(1/2)	2S	Nguyệt thú cửa Bắc	Nguyệt thú	DTGL
+555	EX2 31	Lính HT	Tím/Vàng	3(2/1)	3S	Tàn tích Hồ Tinh	Yêu Ma	DTGL
+556	EX2 32	Lính HT	Tím/Vàng	4(2/2)	4S	Chi E, Nguyệt Long sáng chói*	Nguyệt thú - Long tộc	DTGL
+557	EX2 33	Lính HT	Vàng/Xanh	2(1/1)	4S	Âu Cơ, Thánh nữ chăm chỉ*	Tiên tộc	DTGL
+558	EX2 34	Lính HT	Vàng/Xanh	3(2/1)	3S	Li Ma, Thượng pháp võ sư	Tiên tộc	DTGL
+559	EX2 35	Lính HT	Vàng/Xanh	5(2/2)	4S	Sùng Tích, Long Thần Viễn Đông*	Tự nhiên - Long tộc	DTGL
+560	EX2 36	Lính HT	Đỏ/Xanh	4(2/2)	4S	Ngọc Thanh Thánh Long, hộ vệ lâm*	Tự nhiên - Long tộc	DTGL
+561	EX2 37	Lính HT	Đỏ/Xanh	5(2/2)	4S	Hùng Lộc, thiên tài chiến sự*	Lạc Việt	DTGL
+562	EX2 38	Lính HT	Đỏ/Xanh	6(2/2)	4S	Lí Sẹo, Mặt đen lì lợm*	Mặt đen	DTGL
+563	EX2 39	Lính HT	Xanh/Tím	4(2/2)	4S	Sùng Thi, Cốt Long tướng*	Long tộc - Sơn tộc	DTGL
+564	EX2 40	Lính HT	Đỏ/Tím	7(2/2)	3S	Sùng Rây, bạo chúa điên cuồng	Thuỷ - Long tộc	DTGL
+565	EX2 41	Phép	Đỏ	1(2)	2S	Sửa chữa		DTGL
+566	EX2 42	Phép	Đỏ	1(2)	2S	Sáng tạo của Trực Đản		DTGL
+567	EX2 43	Phép	Vàng/Đỏ	2(1/1)	2S	Phòng vệ và phản công		DTGL
+568	EX2 44	Phép	Vàng/Đỏ	3(1/2)	3S	Kiếm của Quy		DTGL
+569	EX2 45	Phép	Vàng/Xanh	3(2/2)	3S	Âu Tinh Âu Cơ hợp chiến		DTGL
+570	EX2 46	Phép HT	Vàng/Xanh	5(3/2)	3S	Âu Tinh quyết chiến Âu Kình		DTGL
+571	EX2 47	Phép HT	Vàng/Xanh	7(2/2)	4S	Tiên thuật chung sức*		DTGL
+572	EX2 48	Phép	Tím/Vàng	2(2/2)	2S	Hấp thụ Yêu khí		DTGL
+573	EX2 49	Phép	Tím/Vàng	3(2/1)	2S	Nguyền rủa mãn kiếp		DTGL
+574	EX2 50	Phép	Tím/Vàng	4(2/2)	3S	Giao hưởng Linh hồn		DTGL
+575	EX2 51	Phép HT	Đỏ/Xanh	3(2/2)	3S	Hơi thở cuối cùng		DTGL
+576	EX2 52	Phép	Đỏ/Xanh	3(2/3)	3S	Tí Nị xuất trận		DTGL
+577	EX2 53	Lính HT	Đỏ/Xanh	3(2/1)	4S	Phong Lang, Cấm Thư Liên Thời	Thời không - Thú	DTGL
+578	EX2 54	Lính HT	Xanh/Tím	5(2/2)	4S	Bạo Long, Vệ Binh Báo Thù	Thời không - Long tộc	DTGL
+579	EX2 55	Lính HT	Đỏ/Tím	3(1/1)	4S	Vương Giả, Ngự Đế Song Toàn	Thời không - Yêu Ma	DTGL
+580	EX2 56	Lính HT	Vàng/Xanh	3(1/1)	4S	Nhật Nguyệt, Thời Không Phu Nhân	Thời không - Tiên tộc	DTGL
+581	EX2 57	Lính HT	Tím/Vàng	2(1/1)	4S	Đức Phú, Thời Không Nhất Thể	Thời không - Người	DTGL
+582	EX2 58	Thần	Tím	2	SS	Hằng Nga*		DTGL
+583	EX2 59	Thần	Vàng	1	SS	Ngọc Hoa*		DTGL
+584	EX2 60	Thần	Vàng	2	SS	Lữ Khách Thời Không*		DTGL

@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STTT - Card Deck Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        .card-image {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 11px;
+            text-align: center;
+            border-radius: 8px;
+            overflow: hidden;
+            padding: 0;
+            word-break: break-word;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+        .card-image.small {
+            min-height: 100px;
+        }
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .card-image .card-info {
+            display: none;
+        }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+        .selector-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); gap: 6px; }
+        .deck-gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px; }
+        .card-list { display: flex; flex-direction: column; gap: 8px; }
+         .card-list-item { padding: 12px; border: 1px solid #e5e7eb; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; background: #f9fafb; cursor: pointer; transition: all 0.2s; }
+         .card-list-item.no-image { padding: 8px 12px; font-size: 0.875rem; }
+         .card-list-item:hover { background: #f3f4f6; border-color: #667eea; }
+        .deck-card-image { min-height: 100px; border-radius: 6px; overflow: hidden; }
+        .deck-card-image img { width: 100%; height: 100%; object-fit: cover; }
+        .rarity-SR { color: #fbbf24; font-weight: 600; }
+        .rarity-UR { color: #ef4444; font-weight: 600; }
+        .rarity-R { color: #8b5cf6; font-weight: 600; }
+        .rarity-C { color: #6b7280; }
+        .rarity-SCR { color: #ec4899; font-weight: 600; }
+        .rarity-EX { color: #06b6d4; font-weight: 600; }
+        .rarity-U { color: #3b82f6; font-weight: 600; }
+        .rarity-5S { color: #f59e0b; font-weight: 600; }
+        .rarity-4S { color: #f97316; font-weight: 600; }
+        .rarity-3S { color: #ec4899; font-weight: 600; }
+        .rarity-2S { color: #6366f1; font-weight: 600; }
+        .rarity-SS { color: #a855f7; font-weight: 600; }
+        .deck-card { padding: 12px; background: white; border: 1px solid #e5e7eb; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .deck-card-info { flex: 1; }
+        .deck-card-qty { display: flex; gap: 8px; align-items: center; }
+        .qty-btn { background: #667eea; color: white; border: none; width: 28px; height: 28px; border-radius: 4px; cursor: pointer; font-weight: 600; transition: all 0.2s; }
+        .qty-btn:hover { background: #764ba2; }
+        .qty-input { width: 50px; text-align: center; border: 1px solid #d1d5db; border-radius: 4px; padding: 6px; font-weight: 600; }
+        .tab-btn.active { background-color: #3b82f6 !important; }
+        .sync-status { position: fixed; top-4; right-4; padding: 12px 16px; border-radius: 8px; font-size: 12px; z-index: 50; }
+        .sync-loading { background: #fbbf24; color: #78350f; }
+        .sync-success { background: #86efac; color: #15803d; }
+        .sync-error { background: #fca5a5; color: #7f1d1d; }
+         @media (max-width: 768px) { .card-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); } }
+         .hidden { display: none !important; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div id="sync-status" class="sync-status sync-success hidden">
+        ✅ Ready
+    </div>
+
+    <nav class="bg-gray-800 text-white p-4 sticky top-0 z-40 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center flex-wrap gap-4">
+            <div>
+                <h1 class="text-2xl font-bold">📖 STTT Card Manager</h1>
+                <p class="text-xs text-gray-400">Card Deck Builder</p>
+            </div>
+            <div class="flex gap-2 flex-wrap">
+                <button onclick="switchTab('gallery')" class="px-3 py-2 rounded hover:bg-gray-700 tab-btn active" data-tab="gallery">Gallery</button>
+                <button onclick="switchTab('deck')" class="px-3 py-2 rounded hover:bg-gray-700 tab-btn" data-tab="deck">Deck Builder</button>
+                <button onclick="switchTab('decks')" class="px-3 py-2 rounded hover:bg-gray-700 tab-btn" data-tab="decks">My Decks</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto p-4">
+        <div id="gallery-tab" class="tab-content">
+            <div class="bg-white rounded-lg shadow p-6 mb-6">
+                <div class="flex justify-between items-center mb-4 flex-wrap gap-4">
+                    <h2 class="text-2xl font-bold">Card Gallery</h2>
+                    <div class="flex gap-2 flex-wrap">
+                        <button onclick="toggleViewMode()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm">📋 Toggle View</button>
+                    </div>
+                </div>
+                <input type="text" id="search-input" placeholder="Search by card name or code..." class="w-full px-4 py-2 border rounded mb-4" oninput="filterCards()">
+                <div class="mb-4 flex gap-4 flex-wrap">
+                    <div>
+                         <label class="text-sm font-bold">Type:</label>
+                         <select id="type-filter" onchange="filterCards()" class="px-3 py-2 border rounded text-sm">
+                             <option value="">All Types</option>
+                             <option value="Thần">Thần (God)</option>
+                             <option value="Đại Thần">Đại Thần (Great God)</option>
+                             <option value="Lính">Lính (Troop)</option>
+                             <option value="Lính HT">Lính HT (Troop HT)</option>
+                             <option value="Phép">Phép (Spell)</option>
+                             <option value="Phép HT">Phép HT (Spell HT)</option>
+                             <option value="Thần Điện">Thần Điện (Deity Temple)</option>
+                             <option value="Tinh nhuệ">Tinh nhuệ (Essence)</option>
+                         </select>
+                     </div>
+                    <div>
+                        <label class="text-sm font-bold">Rarity:</label>
+                        <select id="rarity-filter" onchange="filterCards()" class="px-3 py-2 border rounded text-sm">
+                            <option value="">All Rarities</option>
+                            <option value="SR">SR</option>
+                            <option value="UR">UR</option>
+                            <option value="R">R</option>
+                            <option value="C">C</option>
+                            <option value="U">U</option>
+                            <option value="SCR">SCR</option>
+                            <option value="EX">EX</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-sm font-bold">Set (Mùa):</label>
+                        <select id="set-filter" onchange="filterCards()" class="px-3 py-2 border rounded text-sm">
+                            <option value="">All Sets</option>
+                            <option value="STTT">STTT (Set 1)</option>
+                            <option value="DTGL">DTGL (Set 2)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-4 text-sm text-gray-600">Showing <strong id="card-count">0</strong> / <strong id="total-count">0</strong> cards</div>
+                <div id="gallery-container" class="card-grid">
+                    <div class="col-span-full text-center py-8 text-gray-500">Loading cards...</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="deck-tab" class="tab-content hidden" style="overflow: hidden; display: flex; flex-direction: column; height: calc(100vh - 80px);">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4" style="height: 100%; overflow: hidden; min-height: 0;">
+                 <!-- Left: Card Search & Add -->
+                 <div style="overflow: hidden; display: flex; flex-direction: column; min-width: 0;">
+                    <div class="bg-white rounded-lg shadow p-4" style="flex: 1; display: flex; flex-direction: column; overflow: hidden;">
+                        <h2 class="text-lg font-bold mb-3 flex-shrink-0">Find & Add Cards</h2>
+                        <input type="text" id="deck-search-input" placeholder="Search..." class="w-full px-3 py-2 border rounded mb-2 text-sm flex-shrink-0" oninput="updateCardSelector()">
+                        <div class="mb-3 flex gap-2 flex-wrap flex-shrink-0">
+                            <select id="deck-type-filter" onchange="updateCardSelector()" class="flex-1 min-w-24 px-2 py-1 border rounded text-xs">
+                                <option value="">Type</option>
+                                <option value="Thần">Thần</option>
+                                <option value="Đại Thần">Đại Thần</option>
+                                <option value="Lính">Lính</option>
+                                <option value="Lính HT">Lính HT</option>
+                                <option value="Phép">Phép</option>
+                                <option value="Phép HT">Phép HT</option>
+                                <option value="Thần Điện">Thần Điện</option>
+                                <option value="Tinh nhuệ">Tinh nhuệ</option>
+                            </select>
+                            <select id="deck-rarity-filter" onchange="updateCardSelector()" class="flex-1 min-w-20 px-2 py-1 border rounded text-xs">
+                                <option value="">Rarity</option>
+                                <option value="SR">SR</option>
+                                <option value="UR">UR</option>
+                                <option value="R">R</option>
+                                <option value="C">C</option>
+                                <option value="U">U</option>
+                                <option value="SCR">SCR</option>
+                                <option value="EX">EX</option>
+                            </select>
+                        </div>
+                        <div id="selector-container" class="flex-1 overflow-y-auto" style="min-height: 0;"></div>
+                    </div>
+                </div>
+
+                 <!-- Right: Deck View & Export -->
+                 <div class="lg:col-span-2" style="overflow: hidden; display: flex; flex-direction: column; min-width: 0;">
+                    <div class="bg-white rounded-lg shadow p-4 flex flex-col" style="flex: 1; overflow: hidden;">
+                        <div class="flex justify-between items-center mb-3 flex-shrink-0">
+                            <h2 class="text-lg font-bold">Your Deck</h2>
+                            <button onclick="clearDeck()" class="px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600 text-xs">Clear</button>
+                        </div>
+                        <div class="p-2 bg-blue-50 rounded text-xs mb-3 flex-shrink-0">
+                            <div class="flex justify-between gap-4">
+                                <span><strong>Total:</strong> <span id="deck-count">0</span></span>
+                                <span><strong>Unique:</strong> <span id="unique-count">0</span></span>
+                            </div>
+                        </div>
+                        <div class="mb-3 flex gap-2 flex-shrink-0">
+                            <button onclick="setDeckViewMode('gallery')" id="deck-view-gallery-btn" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-xs">🖼️ Gallery</button>
+                            <button onclick="setDeckViewMode('list')" id="deck-view-list-btn" class="px-3 py-1 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 text-xs">📋 List</button>
+                        </div>
+                        <div id="deck-preview" class="overflow-y-auto flex-1" style="min-height: 0;"></div>
+                        <div class="space-y-2 pt-3 border-t flex-shrink-0 mt-3">
+                            <button onclick="exportAsTxt()" class="w-full px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 text-xs font-bold">📄 TXT</button>
+                            <button onclick="exportAsJson()" class="w-full px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-xs font-bold">💾 JSON</button>
+                            <button onclick="exportAsImage()" class="w-full px-3 py-1 bg-purple-500 text-white rounded hover:bg-purple-600 text-xs font-bold">📸 Image</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="decks-tab" class="tab-content hidden" style="min-height: calc(100vh - 80px); display: flex; flex-direction: column;">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow p-6 mb-6">
+                    <h2 class="text-2xl font-bold mb-4">Manage Decks</h2>
+                    <div class="mb-6 flex gap-2">
+                        <input type="text" id="deck-name-input" placeholder="Deck name..." class="flex-1 px-4 py-2 border rounded text-sm">
+                        <button onclick="saveDeckNamed()" class="px-6 py-2 bg-purple-500 text-white rounded hover:bg-purple-600 font-bold text-sm">💾 Save</button>
+                    </div>
+                    <button onclick="importDeck()" class="w-full px-6 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600 font-bold text-sm">📥 Import from File</button>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-2xl font-bold mb-4">Saved Decks</h2>
+                    <div id="saved-decks-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+                </div>
+            </div>
+        </div>
+
+        <input type="file" id="import-file" accept=".json" style="display: none;" onchange="handleFileImport()">
+
+    <script src="cards-data.js"></script>
+    <script>
+         let allCards = [];
+         let currentDeck = {};
+         let currentViewMode = 'grid';
+         let deckViewMode = 'list';
+         let filteredCards = [];
+         let savedDecks = {};
+
+         const MAIN_TYPES = ['Thần', 'Lính', 'Phép', 'Thần Điện', 'Khác'];
+         function getMainType(type) {
+             if (type === 'Thần' || type === 'Đại Thần') return 'Thần';
+             if (type === 'Lính' || type === 'Lính HT' || type === 'Tinh nhuệ') return 'Lính';
+             if (type === 'Phép' || type === 'Phép HT') return 'Phép';
+             if (type === 'Thần Điện') return 'Thần Điện';
+             return 'Khác';
+         }
+
+         function init() {
+             if (typeof CARDS_DATA !== 'undefined' && CARDS_DATA.length > 0) {
+                 allCards = CARDS_DATA;
+                 console.log(`✅ Loaded ${allCards.length} cards from embedded data`);
+                 document.getElementById('total-count').textContent = allCards.length;
+                 
+                 loadSavedDecks();
+                 updateSavedDecksList();
+                 
+                 filterCards();
+                 updateCardSelector();
+                 loadDeck();
+                 updateDeckDisplay();
+                 
+                 document.getElementById('sync-status').textContent = `✅ ${allCards.length} cards ready!`;
+                 document.getElementById('sync-status').classList.remove('hidden');
+                 setTimeout(() => {
+                     document.getElementById('sync-status').classList.add('hidden');
+                 }, 3000);
+             } else {
+                 console.error('❌ No card data found');
+                 document.getElementById('sync-status').textContent = '❌ No card data loaded';
+                 document.getElementById('sync-status').className = 'sync-status sync-error';
+             }
+         }
+
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+            document.getElementById(tabName + '-tab').classList.remove('hidden');
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-blue-500');
+                if (btn.dataset.tab === tabName) {
+                    btn.classList.add('active', 'bg-blue-500');
+                }
+            });
+        }
+
+         function toggleViewMode() {
+             currentViewMode = currentViewMode === 'grid' ? 'list' : 'grid';
+             renderGallery();
+         }
+
+        function filterCards() {
+            const search = document.getElementById('search-input').value.toLowerCase();
+            const typeFilter = document.getElementById('type-filter').value;
+            const rarityFilter = document.getElementById('rarity-filter').value;
+            const setFilter = document.getElementById('set-filter').value;
+            
+            filteredCards = allCards.filter(c => {
+                const matchSearch = search === '' || c.name.toLowerCase().includes(search) || c.code.toLowerCase().includes(search);
+                const matchType = typeFilter === '' || c.type === typeFilter;
+                const matchRarity = rarityFilter === '' || c.rarity === rarityFilter;
+                const matchSet = setFilter === '' || c.set === setFilter;
+                return matchSearch && matchType && matchRarity && matchSet;
+            });
+            
+            renderGallery();
+        }
+
+        function renderGallery() {
+            const container = document.getElementById('gallery-container');
+            document.getElementById('card-count').textContent = filteredCards.length;
+            
+            if (filteredCards.length === 0) {
+                container.innerHTML = '<div class="col-span-full text-center py-8 text-gray-500">No cards found</div>';
+                return;
+            }
+            
+            if (currentViewMode === 'grid') {
+                container.className = 'card-grid';
+                container.innerHTML = filteredCards.map(card => {
+                    if (card.image) {
+                        return `
+                            <div class="card-image cursor-pointer hover:shadow-lg transition-all" onclick="addCardToDeck('${card.code}')">
+                                <img src="${card.image}" alt="${card.name}" onerror="this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'">
+                                <div class="card-info">
+                                    <div class="font-bold text-xs">${card.name}</div>
+                                    <div class="text-xs"><span class="rarity-${card.rarity}">${card.rarity}</span></div>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        // Placeholder for missing image
+                        return `
+                            <div class="card-image cursor-pointer hover:shadow-lg transition-all bg-gradient-to-br from-gray-400 to-gray-600" onclick="addCardToDeck('${card.code}')" title="Image not yet available">
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: rgba(255,255,255,0.7);">
+                                    <div style="font-size: 24px; margin-bottom: 8px;">📷</div>
+                                    <div style="font-size: 10px;">No image</div>
+                                </div>
+                                <div class="card-info">
+                                    <div class="font-bold text-xs">${card.name}</div>
+                                    <div class="text-xs"><span class="rarity-${card.rarity}">${card.rarity}</span></div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }).join('');
+            } else {
+                container.className = 'card-list';
+                container.innerHTML = filteredCards.map(card => `
+                    <div class="card-list-item no-image" onclick="addCardToDeck('${card.code}')">
+                        <div style="flex: 1;">
+                            <div class="font-bold text-sm">${card.name}</div>
+                            <div class="text-xs text-gray-600">${card.code} • ${card.color}</div>
+                        </div>
+                        <div class="text-right">
+                            <span class="rarity-${card.rarity}">${card.rarity}</span>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function addCardToDeck(cardCode) {
+            const card = allCards.find(c => c.code === cardCode);
+            if (!card) return;
+            
+            if (currentDeck[cardCode]) {
+                currentDeck[cardCode].quantity++;
+            } else {
+                currentDeck[cardCode] = { ...card, quantity: 1 };
+            }
+            updateDeckDisplay();
+        }
+
+        function removeCardFromDeck(cardCode) {
+            delete currentDeck[cardCode];
+            updateDeckDisplay();
+        }
+
+        function updateCardQuantity(cardCode, qty) {
+            const num = parseInt(qty) || 0;
+            if (num > 0) {
+                currentDeck[cardCode].quantity = num;
+            } else {
+                removeCardFromDeck(cardCode);
+            }
+            updateDeckDisplay();
+        }
+
+        function updateDeckDisplay() {
+            const preview = document.getElementById('deck-preview');
+            const totalCards = Object.values(currentDeck).reduce((sum, card) => sum + card.quantity, 0);
+            
+            document.getElementById('deck-count').textContent = totalCards;
+            document.getElementById('unique-count').textContent = Object.keys(currentDeck).length;
+            
+            if (Object.keys(currentDeck).length === 0) {
+                preview.innerHTML = '<div class="text-center text-gray-500 py-8">Add cards to build your deck</div>';
+            } else if (deckViewMode === 'gallery') {
+                // Group deck by 4 main types
+                const grouped = {};
+                MAIN_TYPES.forEach(t => grouped[t] = []);
+                Object.values(currentDeck).forEach(card => {
+                    grouped[getMainType(card.type)].push(card);
+                });
+
+                let html = '';
+                MAIN_TYPES.forEach(type => {
+                    const cards = grouped[type];
+                    if (cards.length > 0) {
+                        html += `<div class="mb-4">
+                            <div class="text-sm font-bold mb-2 text-gray-700">${type} (${cards.reduce((s, c) => s + c.quantity, 0)})</div>
+                            <div class="deck-gallery-grid">`;
+                        
+                        cards.forEach(card => {
+                            if (card.image) {
+                                html += `
+                                    <div class="deck-card-image card-image cursor-pointer hover:shadow-lg transition-all relative group" onclick="removeCardFromDeck('${card.code}')" title="Click to remove">
+                                        <img src="${card.image}" alt="${card.name}" onerror="this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'">
+                                        <div class="absolute top-1 right-1 bg-red-500 text-white rounded px-1.5 py-0.5 text-xs font-bold">×${card.quantity}</div>
+                                    </div>
+                                `;
+                            } else {
+                                html += `
+                                    <div class="deck-card-image card-image cursor-pointer hover:shadow-lg transition-all relative bg-gradient-to-br from-gray-400 to-gray-600" onclick="removeCardFromDeck('${card.code}')" title="Click to remove">
+                                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: rgba(255,255,255,0.7); font-size: 12px;">📷</div>
+                                        <div class="absolute top-1 right-1 bg-red-500 text-white rounded px-1.5 py-0.5 text-xs font-bold">×${card.quantity}</div>
+                                    </div>
+                                `;
+                            }
+                        });
+                        html += `</div></div>`;
+                    }
+                });
+                
+                preview.className = 'overflow-y-auto flex-1';
+                preview.innerHTML = html;
+            } else {
+                preview.className = 'space-y-1 overflow-y-auto flex-1';
+                preview.innerHTML = Object.values(currentDeck).map(card => `
+                    <div class="deck-card" style="padding: 8px; margin-bottom: 4px;">
+                        <div class="deck-card-info">
+                            <div class="font-bold text-xs">${card.name}</div>
+                            <div class="text-xs text-gray-600">${card.code} • <span class="rarity-${card.rarity}">${card.rarity}</span></div>
+                        </div>
+                        <div class="deck-card-qty" style="gap: 4px;">
+                            <button class="qty-btn" style="width: 24px; height: 24px; padding: 0;" onclick="updateCardQuantity('${card.code}', ${card.quantity - 1})">−</button>
+                            <input type="number" class="qty-input" value="${card.quantity}" onchange="updateCardQuantity('${card.code}', this.value)" min="1" style="width: 40px; padding: 4px;">
+                            <button class="qty-btn" style="width: 24px; height: 24px; padding: 0;" onclick="updateCardQuantity('${card.code}', ${card.quantity + 1})">+</button>
+                            <button class="qty-btn bg-red-500 hover:bg-red-600" style="width: 24px; height: 24px; padding: 0;" onclick="removeCardFromDeck('${card.code}')">✕</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+            
+            localStorage.setItem('sttt_deck', JSON.stringify(currentDeck));
+        }
+
+        function setDeckViewMode(mode) {
+            deckViewMode = mode;
+            document.getElementById('deck-view-gallery-btn').className = mode === 'gallery' ? 'px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-xs' : 'px-3 py-1 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 text-xs';
+            document.getElementById('deck-view-list-btn').className = mode === 'list' ? 'px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-xs' : 'px-3 py-1 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 text-xs';
+            updateDeckDisplay();
+        }
+
+         function updateCardSelector() {
+             const search = document.getElementById('deck-search-input').value.toLowerCase();
+             const typeFilter = document.getElementById('deck-type-filter').value;
+             const rarityFilter = document.getElementById('deck-rarity-filter').value;
+             
+             let filtered = allCards;
+             if (search) filtered = filtered.filter(c => c.name.toLowerCase().includes(search) || c.code.toLowerCase().includes(search));
+             if (typeFilter) filtered = filtered.filter(c => c.type === typeFilter);
+             if (rarityFilter) filtered = filtered.filter(c => c.rarity === rarityFilter);
+             
+             const container = document.getElementById('selector-container');
+             if (filtered.length === 0) {
+                 container.innerHTML = '<div class="text-center text-gray-500 py-8">No cards found</div>';
+                 return;
+             }
+             
+             container.className = 'selector-grid flex-1 overflow-y-auto';
+             container.innerHTML = filtered.map(card => {
+                 if (card.image) {
+                     return `
+                         <div class="card-image small cursor-pointer hover:shadow-lg transition-all" onclick="addCardToDeck('${card.code}')">
+                             <img src="${card.image}" alt="${card.name}" onerror="this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'">
+                         </div>
+                     `;
+                 } else {
+                     return `
+                         <div class="card-image small cursor-pointer hover:shadow-lg transition-all bg-gradient-to-br from-gray-400 to-gray-600" onclick="addCardToDeck('${card.code}')" title="Image not yet available">
+                             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: rgba(255,255,255,0.7); font-size: 10px;">📷</div>
+                         </div>
+                     `;
+                 }
+             }).join('');
+         }
+
+        function clearDeck() {
+            if (confirm('Clear entire deck?')) {
+                currentDeck = {};
+                updateDeckDisplay();
+            }
+        }
+
+        function getDeckGrouped() {
+            const grouped = {};
+            MAIN_TYPES.forEach(t => grouped[t] = []);
+            Object.values(currentDeck).forEach(card => {
+                const entry = `${card.quantity}x ${card.name} (${card.code})`;
+                grouped[getMainType(card.type)].push(entry);
+            });
+            return grouped;
+        }
+
+        function exportAsTxt() {
+            const grouped = getDeckGrouped();
+            const total = Object.values(currentDeck).reduce((sum, card) => sum + card.quantity, 0);
+
+            let txt = 'STTT CARD DECK\n';
+            txt += '='.repeat(50) + '\n\n';
+
+            MAIN_TYPES.forEach(type => {
+                const entries = grouped[type];
+                if (!entries || entries.length === 0) return;
+                const count = entries.reduce((s, e) => s + parseInt(e.match(/\d+/)[0]), 0);
+                txt += `${type} (${count})\n`;
+                txt += '-'.repeat(50) + '\n';
+                entries.forEach(e => txt += e + '\n');
+                txt += '\n';
+            });
+
+            txt += '='.repeat(50) + '\n';
+            txt += `Tổng cộng: ${total} lá\n`;
+
+            downloadFile(txt, 'sttt-deck.txt', 'text/plain');
+        }
+
+
+         function exportAsJson() {
+             const data = {
+                 exported: new Date().toISOString(),
+                 deck: currentDeck,
+                 stats: {
+                     total: Object.values(currentDeck).reduce((sum, card) => sum + card.quantity, 0),
+                     unique: Object.keys(currentDeck).length
+                 }
+             };
+             
+             downloadFile(JSON.stringify(data, null, 2), 'sttt-deck.json', 'application/json');
+         }
+
+         function exportAsImage() {
+             if (Object.keys(currentDeck).length === 0) {
+                 alert('Cannot export empty deck');
+                 return;
+             }
+
+             // Create temporary container for image export
+             const tempContainer = document.createElement('div');
+             tempContainer.style.position = 'fixed';
+             tempContainer.style.left = '-9999px';
+             tempContainer.style.top = '-9999px';
+             tempContainer.style.width = '1200px';
+             tempContainer.style.backgroundColor = '#f3f4f6';
+             tempContainer.style.padding = '40px';
+             tempContainer.style.fontFamily = 'Arial, sans-serif';
+             
+             // Group deck by 4 main types
+             const grouped = {};
+             MAIN_TYPES.forEach(t => grouped[t] = []);
+             Object.values(currentDeck).forEach(card => {
+                 grouped[getMainType(card.type)].push(card);
+             });
+
+             const total = Object.values(currentDeck).reduce((sum, card) => sum + card.quantity, 0);
+             const unique = Object.keys(currentDeck).length;
+
+             let html = `
+                 <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                     <div style="text-align: center; margin-bottom: 30px; border-bottom: 3px solid #3b82f6; padding-bottom: 20px;">
+                         <h1 style="margin: 0; font-size: 32px; font-weight: bold; color: #1f2937;">📖 STTT Card Deck</h1>
+                         <p style="margin: 8px 0 0 0; font-size: 14px; color: #6b7280;">Tổng: <strong>${total}</strong> lá | Loại: <strong>${unique}</strong></p>
+                     </div>
+             `;
+
+             // Add sections for each type
+             MAIN_TYPES.forEach(type => {
+                 const cards = grouped[type];
+                 if (cards.length === 0) return;
+
+                 const typeTotal = cards.reduce((s, c) => s + c.quantity, 0);
+                 html += `
+                     <div style="margin-bottom: 25px;">
+                         <h2 style="font-size: 18px; font-weight: bold; color: #3b82f6; margin: 0 0 12px 0;">${type} (${typeTotal})</h2>
+                         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px;">
+                 `;
+
+                 cards.forEach(card => {
+                     const imgHtml = card.image
+                         ? `<img src="${card.image}" style="width:100%;height:140px;object-fit:cover;display:block;" crossorigin="anonymous">`
+                         : `<div style="width:100%;height:140px;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;font-size:24px;">📷</div>`;
+                     html += `
+                         <div style="border:1px solid #d1d5db;border-radius:8px;overflow:hidden;background:#f9fafb;position:relative;">
+                             ${imgHtml}
+                             <div style="position:absolute;top:6px;right:6px;background:#3b82f6;color:white;padding:2px 7px;border-radius:4px;font-size:12px;font-weight:bold;">×${card.quantity}</div>
+                             <div style="padding:6px 8px;">
+                                 <div style="font-size:10px;font-weight:bold;color:#1f2937;line-height:1.3;">${card.name}</div>
+                                 <div style="font-size:9px;color:#6b7280;margin-top:2px;">${card.code}</div>
+                             </div>
+                         </div>
+                     `;
+                 });
+
+                 html += `</div></div>`;
+             });
+
+             html += `
+                     <div style="margin-top:30px;padding-top:20px;border-top:2px solid #e5e7eb;text-align:center;color:#6b7280;font-size:12px;">
+                         <p style="margin:0;">Xuất lúc ${new Date().toLocaleString('vi-VN')}</p>
+                     </div>
+                 </div>
+             `;
+
+             tempContainer.innerHTML = html;
+             document.body.appendChild(tempContainer);
+
+             // Generate image using html2canvas
+             html2canvas(tempContainer, {
+                 backgroundColor: '#f3f4f6',
+                 scale: 2,
+                 logging: false,
+                 allowTaint: true,
+                 useCORS: true
+             }).then(canvas => {
+                 const link = document.createElement('a');
+                 link.href = canvas.toDataURL('image/png');
+                 link.download = `sttt-deck-${new Date().toISOString().slice(0, 10)}.png`;
+                 link.click();
+                 
+                 // Clean up
+                 document.body.removeChild(tempContainer);
+             }).catch(err => {
+                 alert('Error generating image: ' + err.message);
+                 document.body.removeChild(tempContainer);
+             });
+         }
+
+        function importDeck() {
+            document.getElementById('import-file').click();
+        }
+
+        function handleFileImport() {
+            const file = document.getElementById('import-file').files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                try {
+                    const data = JSON.parse(event.target.result);
+                    currentDeck = data.deck || {};
+                    updateDeckDisplay();
+                    switchTab('deck');
+                    alert('Deck imported successfully!');
+                } catch (e) {
+                    alert('Error importing deck: ' + e.message);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function downloadFile(content, filename, type) {
+            const blob = new Blob([content], { type });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function loadDeck() {
+            const saved = localStorage.getItem('sttt_deck');
+            if (saved) {
+                currentDeck = JSON.parse(saved);
+            }
+        }
+
+        function loadSavedDecks() {
+            const saved = localStorage.getItem('sttt_saved_decks');
+            if (saved) {
+                try {
+                    savedDecks = JSON.parse(saved);
+                } catch (e) {
+                    savedDecks = {};
+                }
+            }
+        }
+
+        function saveSavedDecks() {
+            localStorage.setItem('sttt_saved_decks', JSON.stringify(savedDecks));
+        }
+
+        function saveDeckNamed() {
+            const name = document.getElementById('deck-name-input').value.trim();
+            if (!name) {
+                alert('Please enter a deck name');
+                return;
+            }
+            
+            if (Object.keys(currentDeck).length === 0) {
+                alert('Cannot save empty deck');
+                return;
+            }
+            
+            savedDecks[name] = {
+                cards: JSON.parse(JSON.stringify(currentDeck)),
+                timestamp: new Date().toISOString()
+            };
+            
+            saveSavedDecks();
+            document.getElementById('deck-name-input').value = '';
+            updateSavedDecksList();
+            alert(`✅ Deck "${name}" saved!`);
+        }
+
+        function loadSavedDeck(name) {
+            if (confirm(`Load deck "${name}"? Current deck will be replaced.`)) {
+                currentDeck = JSON.parse(JSON.stringify(savedDecks[name].cards));
+                updateDeckDisplay();
+                switchTab('deck');
+            }
+        }
+
+        function deleteSavedDeck(name) {
+            if (confirm(`Delete saved deck "${name}"?`)) {
+                delete savedDecks[name];
+                saveSavedDecks();
+                updateSavedDecksList();
+            }
+        }
+
+         function updateSavedDecksList() {
+             const container = document.getElementById('saved-decks-list');
+             
+             if (Object.keys(savedDecks).length === 0) {
+                 container.innerHTML = '<div class="col-span-full text-center text-gray-500 py-8">No saved decks</div>';
+                 return;
+             }
+             
+             container.innerHTML = Object.entries(savedDecks)
+                 .sort((a, b) => new Date(b[1].timestamp) - new Date(a[1].timestamp))
+                 .map(([name, deck]) => {
+                     const cardCount = Object.values(deck.cards).reduce((sum, card) => sum + card.quantity, 0);
+                     const date = new Date(deck.timestamp).toLocaleDateString();
+                     return `
+                         <div class="p-4 border border-gray-300 rounded bg-gray-50 hover:bg-gray-100 transition">
+                             <div class="font-bold text-sm mb-2">${name}</div>
+                             <div class="text-xs text-gray-600 mb-3">${cardCount} cards • ${date}</div>
+                             <div class="flex gap-2">
+                                 <button onclick="loadSavedDeck('${name}')" class="flex-1 px-2 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-600">Load</button>
+                                 <button onclick="deleteSavedDeck('${name}')" class="flex-1 px-2 py-1 bg-red-500 text-white text-xs rounded hover:bg-red-600">Delete</button>
+                             </div>
+                         </div>
+                     `;
+                 }).join('');
+         }
+
+        // Initialize when page loads
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
