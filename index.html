@@ -317,7 +317,7 @@
                 container.innerHTML = filteredCards.map(card => {
                     if (card.image) {
                         return `
-                            <div class="card-image cursor-pointer hover:shadow-lg transition-all" onclick="addCardToDeck('${card.code}')">
+                            <div class="card-image cursor-pointer hover:shadow-lg transition-all" onclick="addCardToDeck(${card.id})">
                                 <img src="${card.image}" alt="${card.name}" onerror="this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'">
                                 <div class="card-info">
                                     <div class="font-bold text-xs">${card.name}</div>
@@ -328,7 +328,7 @@
                     } else {
                         // Placeholder for missing image
                         return `
-                            <div class="card-image cursor-pointer hover:shadow-lg transition-all bg-gradient-to-br from-gray-400 to-gray-600" onclick="addCardToDeck('${card.code}')" title="Image not yet available">
+                            <div class="card-image cursor-pointer hover:shadow-lg transition-all bg-gradient-to-br from-gray-400 to-gray-600" onclick="addCardToDeck(${card.id})" title="Image not yet available">
                                 <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: rgba(255,255,255,0.7);">
                                     <div style="font-size: 24px; margin-bottom: 8px;">📷</div>
                                     <div style="font-size: 10px;">No image</div>
@@ -344,7 +344,7 @@
             } else {
                 container.className = 'card-list';
                 container.innerHTML = filteredCards.map(card => `
-                    <div class="card-list-item no-image" onclick="addCardToDeck('${card.code}')">
+                    <div class="card-list-item no-image" onclick="addCardToDeck(${card.id})">
                         <div style="flex: 1;">
                             <div class="font-bold text-sm">${card.name}</div>
                             <div class="text-xs text-gray-600">${card.code} • ${card.color}</div>
@@ -357,29 +357,29 @@
             }
         }
 
-        function addCardToDeck(cardCode) {
-            const card = allCards.find(c => c.code === cardCode);
+        function addCardToDeck(cardId) {
+            const card = allCards.find(c => c.id === cardId);
             if (!card) return;
-            
-            if (currentDeck[cardCode]) {
-                currentDeck[cardCode].quantity++;
+
+            if (currentDeck[cardId]) {
+                currentDeck[cardId].quantity++;
             } else {
-                currentDeck[cardCode] = { ...card, quantity: 1 };
+                currentDeck[cardId] = { ...card, quantity: 1 };
             }
             updateDeckDisplay();
         }
 
-        function removeCardFromDeck(cardCode) {
-            delete currentDeck[cardCode];
+        function removeCardFromDeck(cardId) {
+            delete currentDeck[cardId];
             updateDeckDisplay();
         }
 
-        function updateCardQuantity(cardCode, qty) {
+        function updateCardQuantity(cardId, qty) {
             const num = parseInt(qty) || 0;
             if (num > 0) {
-                currentDeck[cardCode].quantity = num;
+                currentDeck[cardId].quantity = num;
             } else {
-                removeCardFromDeck(cardCode);
+                removeCardFromDeck(cardId);
             }
             updateDeckDisplay();
         }
@@ -412,14 +412,14 @@
                         cards.forEach(card => {
                             if (card.image) {
                                 html += `
-                                    <div class="deck-card-image card-image cursor-pointer hover:shadow-lg transition-all relative group" onclick="removeCardFromDeck('${card.code}')" title="Click to remove">
+                                    <div class="deck-card-image card-image cursor-pointer hover:shadow-lg transition-all relative group" onclick="removeCardFromDeck(${card.id})" title="Click to remove">
                                         <img src="${card.image}" alt="${card.name}" onerror="this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'">
                                         <div class="absolute top-1 right-1 bg-red-500 text-white rounded px-1.5 py-0.5 text-xs font-bold">×${card.quantity}</div>
                                     </div>
                                 `;
                             } else {
                                 html += `
-                                    <div class="deck-card-image card-image cursor-pointer hover:shadow-lg transition-all relative bg-gradient-to-br from-gray-400 to-gray-600" onclick="removeCardFromDeck('${card.code}')" title="Click to remove">
+                                    <div class="deck-card-image card-image cursor-pointer hover:shadow-lg transition-all relative bg-gradient-to-br from-gray-400 to-gray-600" onclick="removeCardFromDeck(${card.id})" title="Click to remove">
                                         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: rgba(255,255,255,0.7); font-size: 12px;">📷</div>
                                         <div class="absolute top-1 right-1 bg-red-500 text-white rounded px-1.5 py-0.5 text-xs font-bold">×${card.quantity}</div>
                                     </div>
@@ -441,10 +441,10 @@
                             <div class="text-xs text-gray-600">${card.code} • <span class="rarity-${card.rarity}">${card.rarity}</span></div>
                         </div>
                         <div class="deck-card-qty" style="gap: 4px;">
-                            <button class="qty-btn" style="width: 24px; height: 24px; padding: 0;" onclick="updateCardQuantity('${card.code}', ${card.quantity - 1})">−</button>
-                            <input type="number" class="qty-input" value="${card.quantity}" onchange="updateCardQuantity('${card.code}', this.value)" min="1" style="width: 40px; padding: 4px;">
-                            <button class="qty-btn" style="width: 24px; height: 24px; padding: 0;" onclick="updateCardQuantity('${card.code}', ${card.quantity + 1})">+</button>
-                            <button class="qty-btn bg-red-500 hover:bg-red-600" style="width: 24px; height: 24px; padding: 0;" onclick="removeCardFromDeck('${card.code}')">✕</button>
+                            <button class="qty-btn" style="width: 24px; height: 24px; padding: 0;" onclick="updateCardQuantity(${card.id}, ${card.quantity - 1})">−</button>
+                            <input type="number" class="qty-input" value="${card.quantity}" onchange="updateCardQuantity(${card.id}, this.value)" min="1" style="width: 40px; padding: 4px;">
+                            <button class="qty-btn" style="width: 24px; height: 24px; padding: 0;" onclick="updateCardQuantity(${card.id}, ${card.quantity + 1})">+</button>
+                            <button class="qty-btn bg-red-500 hover:bg-red-600" style="width: 24px; height: 24px; padding: 0;" onclick="removeCardFromDeck(${card.id})">✕</button>
                         </div>
                     </div>
                 `).join('');
@@ -480,13 +480,13 @@
              container.innerHTML = filtered.map(card => {
                  if (card.image) {
                      return `
-                         <div class="card-image small cursor-pointer hover:shadow-lg transition-all" onclick="addCardToDeck('${card.code}')">
+                         <div class="card-image small cursor-pointer hover:shadow-lg transition-all" onclick="addCardToDeck(${card.id})">
                              <img src="${card.image}" alt="${card.name}" onerror="this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'">
                          </div>
                      `;
                  } else {
                      return `
-                         <div class="card-image small cursor-pointer hover:shadow-lg transition-all bg-gradient-to-br from-gray-400 to-gray-600" onclick="addCardToDeck('${card.code}')" title="Image not yet available">
+                         <div class="card-image small cursor-pointer hover:shadow-lg transition-all bg-gradient-to-br from-gray-400 to-gray-600" onclick="addCardToDeck(${card.id})" title="Image not yet available">
                              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: rgba(255,255,255,0.7); font-size: 10px;">📷</div>
                          </div>
                      `;
